@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ReactiveBase, CategorySearch, SingleRange, ResultCard } from '@appbaseio/reactivesearch';
+import { ReactiveBase, CategorySearch, SingleRange, RangeSlider, ResultCard } from '@appbaseio/reactivesearch';
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
             <div >
               <CategorySearch
                 componentId="searchbox"
-                dataField="name"
+                dataField="titles"
                 categoryField="titles.raw"
                 placeholder="Search for music"
                 style={{
@@ -19,16 +19,24 @@ class App extends Component {
                   "marginTop": "100px"
                 }}
               />
-              <SingleRange
+              <RangeSlider
                 componentId="yearfilter"
                 dataField="publishedYear"
-                data={[
-                  { "label": "All"},
-                  {"label": "Title"},
-                  {"label": "Artist"},
-                  {"label": "Year"},
-                ]}
-                defaultSelected="All"
+                title="Year"
+                filterLabel="Year"
+                showHistogram={true}
+                range={{
+                  start: 1945,
+                  end: 2018
+                }}
+                rangeLabels={{
+                  start: "1945",
+                  end: "2018"
+                }}
+                interval={1}
+                react={{
+                  and: ["searchbox"]
+                }}
                 style={{
                   padding: "5px",
                   "marginTop": "10px"
