@@ -11,7 +11,7 @@ class App extends Component {
             <div >
               <CategorySearch
                 componentId="searchbox"
-                dataField="name"
+                dataField="titles"
                 categoryField="titles.raw"
                 placeholder="Search for music"
                 style={{
