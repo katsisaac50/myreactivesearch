@@ -11,7 +11,7 @@ class App extends Component {
             <div >
               <CategorySearch
                 componentId="searchbox"
-                dataField="titles"
+                dataField={["titles", "artists"]}
                 categoryField="titles.raw"
                 placeholder="Search for music"
                 style={{
@@ -54,10 +54,13 @@ class App extends Component {
                 and: ["searchbox", "yearfilter"]
               }}
               onData={(res) => {
+                console.log(res);
                 return {
                   image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-                  title: res.titles,
-                  description: res.artists + " " + "★".repeat(res.location)
+                  title: 'Song Title: '+res.titles,
+                  description: res.artists + " " + "★".repeat(res.location),
+                  year:res.publishedYear
+
                 }
               }}
               style={{
