@@ -63,7 +63,7 @@ class App extends Component {
               onData={(res) => {
                 console.log(res.publishedYear);
                 return {
-                  image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
+                  image: "https://raw.githubusercontent.com/dpfernandes/class04-final-project/master/ama1.png",
                   title: 'Song Title: '+res.titles,
                   description: (
                     <div>
