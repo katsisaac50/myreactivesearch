@@ -54,8 +54,9 @@ class App extends Component {
               dataField="titles"
               title="Results"
               from={0}
-              size={6}
+              size={5}
               pagination={true}
+              pages={9}
               react={{
                 and: ["searchbox", "yearfilter"]
               }}
