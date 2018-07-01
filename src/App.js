@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ReactiveBase, CategorySearch, SingleRange, RangeSlider, ResultCard } from '@appbaseio/reactivesearch';
+import './App.css';
 
 class App extends Component {
   render() {
@@ -18,6 +19,11 @@ class App extends Component {
                   padding: "5px",
                   "marginTop": "100px"
                 }}
+                innerClass={{
+                  title: 'text-title',
+                  input: 'text-input'
+              }}
+              className="CategorySearch"
               />
               <RangeSlider
                 componentId="yearfilter"
@@ -54,17 +60,28 @@ class App extends Component {
                 and: ["searchbox", "yearfilter"]
               }}
               onData={(res) => {
-                console.log(res);
+                console.log(res.publishedYear);
                 return {
                   image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
                   title: 'Song Title: '+res.titles,
-                  description: res.artists + " " + "★".repeat(res.location),
-                  year:res.publishedYear
+                  description: (
+                    <div>
+                      <p>
+                        {'Description: '+res.artists + " " + "★".repeat(res.location)}
+                      </p>
+                        <p>{'Pub Year: '+res.publishedYear}</p>
+                    </div>
+                ),
+                  
+                // containerProps: {
+                //   onMouseEnter: () => console.log('😁'),
+                //   onMouseLeave: () => console.log('🙀')
+                // } 
+                  
 
                 }
               }}
               style={{
-                "width": "60%",
                 "textAlign": "center"
               }}
             />
