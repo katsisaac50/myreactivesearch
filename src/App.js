@@ -20,7 +20,6 @@ class App extends Component {
                   "marginTop": "100px"
                 }}
                 innerClass={{
-                  title: 'text-title',
                   input: 'text-input'
               }}
               className="CategorySearch"
@@ -54,9 +53,9 @@ class App extends Component {
               dataField="titles"
               title="Results"
               from={0}
-              size={5}
+              size={6}
               pagination={true}
-              pages={9}
+              pages={3}
               react={{
                 and: ["searchbox", "yearfilter"]
               }}
@@ -74,10 +73,10 @@ class App extends Component {
                     </div>
                 ),
                   
-                // containerProps: {
-                //   onMouseEnter: () => console.log('😁'),
-                //   onMouseLeave: () => console.log('🙀')
-                // } 
+                containerProps: {
+                  onMouseEnter: () => console.log('😁'),
+                  onMouseLeave: () => console.log('🙀')
+                } 
                   
 
                 }
