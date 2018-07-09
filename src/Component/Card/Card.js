@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {  ResultCard } from '@appbaseio/reactivesearch';
 import CardContent from './CardContent';
+import AlbumPreview from '../../Container/AlbumPreview';
 import 'semantic-ui-css/semantic.min.css';
+
 
 
 class Card extends Component {
@@ -12,7 +14,7 @@ class Card extends Component {
         }
     }
     //<td><Link to={'/course/'+course.id}>{course.title} </Link> </td>
-    OpenDetail =(data, id) =>{
+    OpenDetail =(id) =>{
         window.location.href=`/AlbumList/${id}`;
     }
 
@@ -43,7 +45,7 @@ class Card extends Component {
                             containerProps: {
                                 onMouseEnter: () => this.setState({play: true}),
                                 onMouseLeave: () => this.setState({play: false}),
-                                onClick: ()=>this.OpenDetail(res , res.id)
+                                onClick: ()=>this.OpenDetail(res.id)
                         }}
                     }}
                     style={{ "textAlign": "center"}}
