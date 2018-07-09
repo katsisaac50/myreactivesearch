@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Header from '../Component/Header';
+import AppHeader from '../Component/Header';
 import axios from 'axios';
 import { withRouter } from 'react-router';
+import { Grid, Header, Container, Image} from 'semantic-ui-react';
 
 class AlbumPreview extends Component {
 
@@ -31,9 +32,21 @@ class AlbumPreview extends Component {
 
         return (
             <div>
-                <Header/>
+                <AppHeader />
+                <Grid style={{ position: 'relative', top: '50px'}}>
+                    <Grid.Row>
+                        <Grid.Column computer={5} tablet={5} mobile={16}>
+                            <Container>
+                                <Header as="h3"> {album.artists} </Header>
+                            </Container>
+                        </Grid.Column>
+                        <Grid.Column computer={6} tablet={6} mobile={16}>
+                        </Grid.Column>
+                        <Grid.Column computer={5} tablet={5} mobile={16}>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
 
-                {album.id}
             </div>
 
         );
