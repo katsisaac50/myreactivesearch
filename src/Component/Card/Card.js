@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {  ResultCard } from '@appbaseio/reactivesearch';
 import CardContent from './CardContent';
-import AlbumPreview from '../../Container/AlbumPreview';
 import 'semantic-ui-css/semantic.min.css';
 
 
@@ -34,7 +33,6 @@ class Card extends Component {
                     onData={(res) => {
                         return {
                             image: "https://raw.githubusercontent.com/dpfernandes/class04-final-project/master/ama1.png",
-                            icon: 'cross',
                             title: 'Song Title: '+res.titles,
                             description: (
                                 <CardContent
