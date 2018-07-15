@@ -5,7 +5,7 @@ import { Grid, Container, Header, Input, Button, Icon } from 'semantic-ui-react'
 class AppFooter extends Component {
     render() {
       return (
-        <Grid style={{ backgroundColor: 'rgba(0,0,0, 0.8)'}}>
+        <Grid style={{ marginTop:'20px', backgroundColor: 'rgba(0,0,0, 0.8)'}}>
             <Grid.Row>
                 <Grid.Column computer={10} tablet={10} mobile={8} style={{padding: '20px 50px', borderRight: 'solid 1px black'}}>
                     <Container textAlign='left' >

@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import { ReactiveBase, CategorySearch, RangeSlider } from '@appbaseio/reactivesearch';
-import { Grid, Container } from 'semantic-ui-react';
+import { ReactiveBase, CategorySearch, RangeSlider} from '@appbaseio/reactivesearch';
+import { Grid, Container, Form, Checkbox, Label } from 'semantic-ui-react';
 import Header from '../Component/Header';
 import Card from '../Component/Card/Card';
 import '../App.css';
 
 class Search extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            filter:'all'
+        }
+	}
+changeRadioValue = (value) =>{ 
+	this.setState({ filter: value })
+}
   render() {
+		const {filter}=this.state
+		const dataField=filter=== 'all'? ["titles", "artists" ] :filter ;
+		const checkboxKey=["all", "titles", "artists" ];
     return (
 
         <ReactiveBase
@@ -24,7 +36,7 @@ class Search extends Component {
 								<Container>
 									<CategorySearch
 										componentId="searchbox"
-										dataField={["titles", "artists"]}
+										dataField={dataField}
 										categoryField="titles.raw"
 										placeholder="Search for music"
 										style={{marginTop: "30px", paddingBottom: " 10px", paddingLeft:" 100px", color: 'Grey'}}
@@ -34,6 +46,25 @@ class Search extends Component {
 										}}
 										className="CategorySearch"
 									/>
+									 <Form style={{ paddingLeft:" 100px" }}>
+										<Form.Field>
+											{
+												checkboxKey.map((checkbox)=>
+													<Checkbox
+														key={checkboxKey.indexOf(checkbox)}
+														radio
+														style={{padding: '0 5px'}}
+														label={checkbox}
+														name='checkboxRadioGroup'
+														value={checkbox}
+														checked={filter === `${checkbox}` }
+														onChange={()=>this.changeRadioValue(checkbox)}
+													/>
+												)
+											}
+										</Form.Field>
+									</Form>
+									
 								</Container>
 							</Grid.Column>
 							<Grid.Column computer={7}>
@@ -43,29 +74,18 @@ class Search extends Component {
 							</Grid.Column>
 						</Grid.Row>
 					</Grid>
-
+					
 					<RangeSlider
 						componentId="yearfilter"
 						dataField="publishedYear"
 						title="Year"
 						filterLabel="Year"
 						showHistogram={true}
-						range={{
-						start: 1945,
-						end: 2018
-						}}
-						rangeLabels={{
-						start: "1945",
-						end: "2018"
-						}}
+						range={{ start: 1945, end: 2018}}
+						rangeLabels={{ start: "1945", end: "2018" }}
 						interval={1}
-						react={{
-						and: ["searchbox"]
-						}}
-						style={{
-						padding: "5px",
-						"marginTop": "100px"
-						}}
+						react={{ and: ["searchbox"] }}
+						style={{ padding: "5px",marginTop: "150px"}}
 					/>
 				</div>
 				<Card/>
