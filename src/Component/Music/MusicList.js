@@ -11,6 +11,7 @@ class MusicList extends Component {
     }
     render() {
         const { music, album, playMusic } = this.props;
+        console.log(album)
         const { hovor } = this.state;
         const backgroundColor= hovor? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.1)';
       return (

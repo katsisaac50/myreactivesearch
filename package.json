@@ -5,6 +5,7 @@
   "dependencies": {
     "@appbaseio/reactivesearch": "^2.6.8",
     "axios": "^0.18.0",
+    "faker": "^4.1.0",
     "gh-pages": "^1.2.0",
     "query-string": "^6.1.0",
     "react": "^16.4.1",

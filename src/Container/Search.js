@@ -46,24 +46,7 @@ changeRadioValue = (value) =>{
 										}}
 										className="CategorySearch"
 									/>
-									 <Form style={{ paddingLeft:" 100px" }}>
-										<Form.Field>
-											{
-												checkboxKey.map((checkbox)=>
-													<Checkbox
-														key={checkboxKey.indexOf(checkbox)}
-														radio
-														style={{padding: '0 5px'}}
-														label={checkbox}
-														name='checkboxRadioGroup'
-														value={checkbox}
-														checked={filter === `${checkbox}` }
-														onChange={()=>this.changeRadioValue(checkbox)}
-													/>
-												)
-											}
-										</Form.Field>
-									</Form>
+									 
 									
 								</Container>
 							</Grid.Column>
@@ -74,7 +57,7 @@ changeRadioValue = (value) =>{
 							</Grid.Column>
 						</Grid.Row>
 					</Grid>
-					
+
 					<RangeSlider
 						componentId="yearfilter"
 						dataField="publishedYear"
@@ -87,6 +70,24 @@ changeRadioValue = (value) =>{
 						react={{ and: ["searchbox"] }}
 						style={{ padding: "5px",marginTop: "150px"}}
 					/>
+										<Form style={{ paddingLeft:" 100px" }}>
+						<Form.Field>
+							{
+								checkboxKey.map((checkbox)=>
+									<Checkbox
+										key={checkboxKey.indexOf(checkbox)}
+										radio
+										style={{padding: '0 5px'}}
+										label={checkbox}
+										name='checkboxRadioGroup'
+										value={checkbox}
+										checked={filter === `${checkbox}` }
+										onChange={()=>this.changeRadioValue(checkbox)}
+									/>
+								)
+							}
+						</Form.Field>
+					</Form> 
 				</div>
 				<Card/>
 				
