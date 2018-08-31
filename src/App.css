@@ -1,9 +1,9 @@
 .CategorySearch .text-input {
-  width:40%;
+width: "80%";
 box-sizing:border-box;
-border:2px solid#ccc;
-border-radius: 30px;
-font-size: 20px;
+border-radius: 5px;
+font-size: 16px;
 }
+
 
 

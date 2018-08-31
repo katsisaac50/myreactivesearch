@@ -4,17 +4,31 @@
   "private": true,
   "dependencies": {
     "@appbaseio/reactivesearch": "^2.6.8",
+    "axios": "^0.18.0",
+    "faker": "^4.1.0",
     "gh-pages": "^1.2.0",
+    "knex": "^0.15.2",
+    "mysql": "^2.16.0",
+    "query-string": "^6.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "semantic-ui-css": "^2.3.2",
+    "semantic-ui-react": "^0.81.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build ; gh-pages -d build"
+    "deploy": "npm run build ; gh-pages -d build",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
-  "homepage": "https://katsisaac50.github.io/myreactivesearch/"
+  "homepage": "https://katsisaac50.github.io/myreactivesearch/",
+  "devDependencies": {
+    "@storybook/react": "^3.4.8"
+  }
 }

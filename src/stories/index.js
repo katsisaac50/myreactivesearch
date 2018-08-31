@@ -1,0 +1,4 @@
+
+require('./MusicList');
+require('./AppFooter');
+
